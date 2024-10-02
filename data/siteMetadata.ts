@@ -6,6 +6,10 @@ const siteMetadata = {
   locale: 'zh-CN',
   socialBanner:
     'https://nextblog.silkyheart.me/_next/image?url=%2Fstatic%2Fimages%2Favatar.jpg&w=256&q=75',
+  /** 指定 i18n 支持的语言，并据此生成语言切换器 */
+  languages: ['zh', 'en'],
+  /** 指定默认语言 */
+  fallbackLanguage: 'zh',
 };
 
 export default siteMetadata;
