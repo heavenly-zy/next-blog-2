@@ -3,6 +3,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import { notFound } from 'next/navigation';
 import dayjs from 'dayjs';
 import siteMetadata from '@/data/siteMetadata';
+import Waline from '@/components/Waline';
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -79,6 +80,9 @@ const Page = ({ params }: { params: { id: string } }) => {
         </div>
         <MDXContent />
       </article>
+      <div className="mx-auto max-w-xl">
+        <Waline el="#waline" serverURL="https://waline.silkyheart.me/" />
+      </div>
     </>
   );
 };
