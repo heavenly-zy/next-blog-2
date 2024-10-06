@@ -27,6 +27,8 @@ export const generateMetadata = ({ params }: { params: { id: string } }) => {
     };
   });
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const authors = post?.authors || [siteMetadata.author];
 
   return {
@@ -67,7 +69,10 @@ const Page = ({ params }: { params: { id: string } }) => {
       />
       <article className="mx-auto max-w-xl py-8 prose prose-slate dark:prose-invert">
         <div className="mb-8 text-center">
-          <time dateTime={post.date} className="mb-1 text-xs text-gray-600 dark:text-white">
+          <time
+            dateTime={post.date}
+            className="mb-1 text-xs text-gray-600 dark:text-white"
+          >
             {dayjs(post.date).format('DD/MM/YYYY')}
           </time>
           <h1 className="text-3xl font-bold dark:text-white">{post.title}</h1>
